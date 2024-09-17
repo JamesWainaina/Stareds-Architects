@@ -44,6 +44,14 @@ const Navbar = () => {
            </li>
            <li>
              <a
+               href="#projects"
+               className="px-4 py-2 bg-gray-600 text-white border border-gray-700 rounded hover:bg-gray-500 transition-colors"
+             >
+               Projects
+             </a>
+           </li>
+           <li>
+             <a
                href="#contact"
                className="px-4 py-2 bg-gray-600 text-white border border-gray-700 rounded hover:bg-gray-500 transition-colors"
              >

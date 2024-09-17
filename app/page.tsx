@@ -1,6 +1,8 @@
-"use client"; // Add this at the very top
+"use client";
 
+import ImageCarousel from "@/components/ImageCarousel";
 import Navbar from "@/components/Navbar";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import React, { useEffect, useState } from "react";
 
 const HomePage = () => {
@@ -24,13 +26,13 @@ const HomePage = () => {
           className={`transition-all duration-1000 ease-out ${
             isLoaded ? "lg:w-1/2 w-full" : "w-0"
           } h-1/2 lg:h-full bg-cover bg-center`}
-          style={{ backgroundImage: "url('/icons/home.jpg')" }}
+          style={{ backgroundImage: "url('/icons/profile.png')" }}
         ></div>
 
         {/* Right Section with Text */}
         <div
-          className="lg:w-1/2 w-full h-1/2 lg:h-full flex flex-col items-start justify-center px-6 lg:px-12
-         text-white text-center lg:text-left"
+          className="lg:w-1/2 w-full h-1/2 lg:h-full flex flex-col items-start 
+          justify-center px-6 lg:px-12 text-white text-center lg:text-left"
         >
           <h1 className="text-4xl font-bold mb-4">Stareds Architects</h1>
           <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
@@ -46,14 +48,13 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* About Us Section */}
       <section
         id="about"
         className="h-screen bg-gray-200 flex flex-col items-center justify-center px-12"
       >
         <div className="max-w-4xl text-center">
           <h2 className="text-4xl font-semibold mb-6">About Us</h2>
-
-          {/* Commitment to Sustainability */}
           <p className="text-lg mb-4">
             At Stareds Architects, we are committed to sustainable design
             practices. We believe in creating environmentally friendly,
@@ -63,44 +64,95 @@ const HomePage = () => {
             latest green technologies, materials, and practices to ensure that
             they are built for longevity.
           </p>
-
-          {/* Collaborative Approach */}
-          <p className="text-lg mb-4">
-            Collaboration lies at the heart of everything we do. From the
-            initial concept to the final blueprint, we work closely with our
-            clients, listening to their needs and understanding their vision. We
-            also collaborate with engineers, interior designers, and other
-            professionals to ensure that every detail is executed to perfection.
-          </p>
         </div>
       </section>
 
       {/* Services Section */}
       <section
         id="services"
-        className="h-screen bg-gray-300 flex items-center justify-center px-4"
+        className="h-screen bg-blue-900 text-white px-8 py-16"
       >
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold mb-4">Our Services</h2>
-          <p className="text-lg max-w-2xl mx-auto">
-            We offer a range of architectural services, including residential,
-            commercial, and landscape architecture. Our team works closely with
-            clients to ensure every detail is meticulously planned and executed.
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-6 text-center">
+            Our Services
+          </h2>
+          <p className="text-center mb-12 max-w-2xl mx-auto">
+            Write a paragraph that talks about your construction company here.
+            Convince your prospective clients to choose you and your team for
+            their construction needs by talking about your unique services, as
+            well as your commitment to getting the job done.
           </p>
+
+          <div className="flex flex-wrap justify-between">
+            <div className="w-full sm:w-1/3 px-4 mb-8">
+              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="/icons/residential.png"
+                  alt="Residential Spaces"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold mb-2">Residential Spaces</h3>
+                  <p>
+                    Residential spaces that blend design with functionality,
+                    delivering comfort and style.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image Carousel for 3D Visuals */}
+            <div className="w-full sm:w-1/3 px-4 mb-8">
+              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+                <ImageCarousel />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold mb-2 mt-3">3D VISUALS</h3>
+                  <p>
+                    High-quality 3D visuals designed to showcase commercial
+                    buildings with detailed representations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full sm:w-1/3 px-4 mb-8">
+              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="/path-to-your-image-2.jpg"
+                  alt="Commercial Buildings"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold mb-2">Interior Designs</h3>
+                  <p>
+                    Interior designs that elevate spaces with a blend of
+                    aesthetics and functionality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Other Sections */}
+      {/* Projects Section */}
       <section
-        id="contact"
-        className="h-screen bg-gray-400 flex items-center justify-center px-4"
+        id="projects"
+        className="h-screen bg-gray-100 text-gray-900 px-8 py-16"
       >
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold mb-4">Contact Us</h2>
-          <p className="text-lg max-w-2xl mx-auto">
-            Ready to start your project? Get in touch with us today and let's
-            discuss how we can turn your ideas into reality.
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-6 text-center">
+            Our Projects
+          </h2>
+          <p className="text-center mb-12 max-w-2xl mx-auto">
+            Here are some of the landmark projects we have successfully
+            completed. Each project demonstrates our commitment to quality,
+            innovation, and sustainability.
           </p>
+
+          {/* Projects Carousel */}
+          <ProjectsCarousel />
         </div>
       </section>
     </div>
@@ -108,4 +160,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
