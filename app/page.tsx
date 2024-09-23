@@ -10,18 +10,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import {Form} from "@/components/ui/form";
 import CustomInput from "@/components/CustomInput";
-
+import axios from 'axios';
 
 
 const formSchema = z.object({
@@ -31,7 +22,11 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Invalid email address.",
   }),
+  description: z.string().min(10, {
+    message: "description must be at least 10 characters.",
+  }).optional(),
 });
+  
 
 
 // Ensure all drafts have a description
@@ -42,6 +37,8 @@ const drafts = originalDrafts.map((draft) => ({
 
 
 const HomePage = () => {
+  // to track my form submission status
+  const [formStatus, setFormStatus] = useState<string | null>(null);
   
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -49,13 +46,26 @@ const HomePage = () => {
     defaultValues: {
       name: "",
       email: "",
+      description: "",
     },
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try{
+      // send the form data to the API route
+      const response = await axios.post('/api/send-email', values);
+
+      // check if the response is successful
+      if (response.status === 200) {
+        console.log('Email sent successfully', response.data);
+        setFormStatus('Your message was sent successfully');
+        form.reset(); 
+      }
+    }catch (error){
+      console.error('Error sending email', error);
+      setFormStatus('An error occurred while sending your message');
+    }
     console.log(values);
   }
 
@@ -112,18 +122,18 @@ const HomePage = () => {
             <div className="relative mb-6 w-1/2">
               <div className="absolute -top-4 left-0 w-16 h-1 bg-blue-600"></div>
               <h2 className="text-5xl font-semibold">
-                Stareds is built on our founders' unique outlook on
-                construction
+                Stareds is built on our founders' unique outlook on construction
               </h2>
             </div>
 
             {/* Paragraph on the right */}
             <div className="flex justify-end">
               <p className="text-md text-gray-600 leading-relaxed max-w-md">
-                Stareds is a construction company that was founded by Edward Mbuthia. 
-                Mbuthia has always had a unique outlook on construction, and they have used this
-                outlook to build a successful company that is known for its
-                innovative designs and high-quality workmanship.
+                Stareds is a construction company that was founded by Edward
+                Mbuthia. Mbuthia has always had a unique outlook on
+                construction, and they have used this outlook to build a
+                successful company that is known for its innovative designs and
+                high-quality workmanship.
               </p>
             </div>
           </div>
@@ -156,7 +166,7 @@ const HomePage = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold mb-2">Residential Spaces</h3>
+                  <h3 className="text-xl font-bold mb-2">RESIDENTIAL SPACES</h3>
                   <p>
                     Residential spaces that blend design with functionality,
                     delivering comfort and style.
@@ -170,7 +180,7 @@ const HomePage = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold mb-2">Commercial Spaces</h3>
+                  <h3 className="text-xl font-bold mb-2">COMMERCIAL SPACES</h3>
                   <p>
                     Commercial Spaces that blend design with functionality,
                     delivering comfort and style.
@@ -182,7 +192,7 @@ const HomePage = () => {
               <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
                 <ImageCarousel images={images} />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold mb-2 mt-3">3D Visuals</h3>
+                  <h3 className="text-xl font-bold mb-2 mt-3">3D VISUALS</h3>
                   <p>
                     High-quality 3D visuals designed to showcase commercial
                     buildings with detailed representations.
@@ -198,7 +208,7 @@ const HomePage = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold mb-2">Interior Designs</h3>
+                  <h3 className="text-xl font-bold mb-2">INTERIOR DESIGNS</h3>
                   <p>
                     Interior designs that elevate spaces with a blend of
                     aesthetics and functionality.
@@ -210,8 +220,23 @@ const HomePage = () => {
               <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
                 <DraftCarousel drafts={drafts} />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold mb-2 mt-3">3D Visuals</h3>
+                  <h3 className="text-xl font-bold mb-2 mt-3"></h3>
                   <p>{drafts[0].description}</p>
+                </div>
+              </div>
+              {/* Service Item */}
+              <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="icons/landscaping.jpg"
+                  alt="Landscaping"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold mb-2">LANDSCAPING</h3>
+                  <p>
+                    Landscaping services that transform outdoor spaces into
+                    beautiful and functional areas.
+                  </p>
                 </div>
               </div>
             </div>
@@ -281,6 +306,9 @@ const HomePage = () => {
                   </Button>
                 </form>
               </Form>
+              {formStatus && (
+                <div className="mt-4 text-green-500">{formStatus}</div>
+              )}
             </div>
 
             {/* Right side: Social media links */}

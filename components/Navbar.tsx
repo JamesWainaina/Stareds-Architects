@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  }
    return (
      <nav className="bg-blue-900 text-white p-4 fixed w-full z-50">
        <div className="container mx-auto px-4 flex justify-between items-center">
