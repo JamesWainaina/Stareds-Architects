@@ -70,5 +70,15 @@ html {
       .form-btn {
         @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
       }
-  
+  @font-face {
+    font-family: 'Algerian';
+    src: url('/public/fonts/Algerian-Regular/Algerian\ Regular.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+    h1 {
+      font-family: 'Algerian', sans-serif;
+      font-size: 48px;
+      /* You can adjust the size here */
+    }
 }

@@ -10,7 +10,7 @@ const Navbar = () => {
          <div className="text-lg font-bold">
            <Link href="#home" scroll={false}>
              <Image
-               src="/icons/Stanreds.png"
+               src="/icons/StareNds.png"
                width={50}
                height={50}
                alt="Stanreds"

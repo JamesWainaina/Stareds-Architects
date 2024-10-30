@@ -103,7 +103,11 @@ const HomePage = () => {
             className="lg:w-1/2 w-full h-1/2 lg:h-full flex flex-col items-start 
             justify-center px-6 lg:px-12 text-white text-center lg:text-left"
           >
-            <h1 className="text-4xl font-bold mb-4">STANREDS ARCHITECTS</h1>
+            <h1
+              style={{ fontFamily: "Algerian, sans-serif", fontSize: "64px" }}
+            >
+              STANREDS ARCHITECTS
+            </h1>
             <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
               Making every draft a reality.
             </h2>
