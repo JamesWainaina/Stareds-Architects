@@ -10,11 +10,11 @@ const Navbar = () => {
          <div className="text-lg font-bold">
            <Link href="#home" scroll={false}>
              <Image
-               src="/icons/logo.png"
+               src="/icons/Stanreds.png"
                width={50}
                height={50}
-               alt="Stareds"
-               className="size-[54px] max-xl:size-14"
+               alt="Stanreds"
+               className="size-[80px] max-xl:size-14"
              />
            </Link>
          </div>

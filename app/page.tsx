@@ -103,9 +103,9 @@ const HomePage = () => {
             className="lg:w-1/2 w-full h-1/2 lg:h-full flex flex-col items-start 
             justify-center px-6 lg:px-12 text-white text-center lg:text-left"
           >
-            <h1 className="text-4xl font-bold mb-4">Stanreds Architects</h1>
+            <h1 className="text-4xl font-bold mb-4">STANREDS ARCHITECTS</h1>
             <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
-              Let&apos;s make your vision come to life
+              Making every draft a reality.
             </h2>
             {/* Smooth scrolling to #about section */}
             <a
@@ -127,7 +127,7 @@ const HomePage = () => {
             <div className="relative mb-6 w-1/2">
               <div className="absolute -top-4 left-0 w-16 h-1 bg-blue-600"></div>
               <h2 className="text-5xl font-semibold">
-                Stanreds is built on our founders&apos; unique outlook on
+                STANREDS is built on our founders&apos; unique outlook on
                 construction
               </h2>
             </div>
@@ -135,7 +135,7 @@ const HomePage = () => {
             {/* Paragraph on the right */}
             <div className="flex justify-end">
               <p className="text-md text-gray-600 leading-relaxed max-w-md">
-                Stanreds is a construction company that was founded by Edward
+                STANREDS is a construction company that was founded by Edward
                 Mbuthia. Mbuthia has always had a unique outlook on
                 construction, and they have used this outlook to build a
                 successful company that is known for its innovative designs and

@@ -1,5 +1,4 @@
 export const images = [
-  "icons/3d1.png",
   "icons/3d2.png",
   "icons/3d3.png",
   "icons/3d4.png",

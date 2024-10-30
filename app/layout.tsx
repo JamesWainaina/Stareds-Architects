@@ -12,10 +12,10 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Stareds",
+  title: "STANREDS",
   description: "The best architecture and design inspiration",
   icons: {
-    icon: "/icons/logo.png",
+    icon: "/icons/Stanreds.png",
   },
 };
 
