@@ -1,7 +1,14 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    "no-console": "off",       // Disable no-console rule
-    "no-unused-vars": "warn"   // Set unused vars to a warning instead of error
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ]
   }
 }
