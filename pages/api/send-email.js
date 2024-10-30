@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, description } = req.body;
+    const { name, phone, email, description } = req.body;
 
     // Set up your email credentials from environment variables
     const transporter = nodemailer.createTransport({
@@ -25,6 +25,7 @@ export default async function handler(req, res) {
         subject: "New Client Inquiry",
         text: `Client Inquiry Details:
         Name: ${name}
+        Phone: ${phone}
         Email: ${email}
         Description: ${description}`,
         html: `<h3>Client Inquiry Details:</h3>
