@@ -8,6 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const formSchema = z.object({
   name: z.string().min(5),
+  phone: z.string().min(11),
   email: z.string().email(),
   description: z.string().optional(),
 });

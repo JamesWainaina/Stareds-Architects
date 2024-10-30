@@ -19,6 +19,10 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "name must be at least 2 characters.",
   }),
+  phone: z.string().min(10, {
+    message: "phone number must be at least 10 characters.",
+  }),
+
   email: z.string().email({
     message: "Invalid email address.",
   }),
@@ -45,6 +49,7 @@ const HomePage = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
       email: "",
       description: "",
     },
@@ -100,7 +105,7 @@ const HomePage = () => {
           >
             <h1 className="text-4xl font-bold mb-4">Stareds Architects</h1>
             <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
-              Let's make your vision come to life
+              Let&apos;s make your vision come to life
             </h2>
             {/* Smooth scrolling to #about section */}
             <a
@@ -122,7 +127,8 @@ const HomePage = () => {
             <div className="relative mb-6 w-1/2">
               <div className="absolute -top-4 left-0 w-16 h-1 bg-blue-600"></div>
               <h2 className="text-5xl font-semibold">
-                Stareds is built on our founders' unique outlook on construction
+                Stareds is built on our founders&apos; unique outlook on
+                construction
               </h2>
             </div>
 
@@ -288,6 +294,14 @@ const HomePage = () => {
                   <div className="flex">
                     <CustomInput
                       control={form.control}
+                      name="phone"
+                      label="Phone"
+                      placeholder="Enter your Phone Number"
+                    />
+                  </div>
+                  <div className="flex">
+                    <CustomInput
+                      control={form.control}
                       name="email"
                       label="Email"
                       placeholder="Enter your email"
@@ -326,20 +340,20 @@ const HomePage = () => {
               </div>
               <div className="space-y-1">
                 <a
-                  href="https://www.linkedin.com"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-lg hover:text-gray-400"
                 >
                   <img
-                    src="/icons/likedin.png"
-                    alt="LinkedIn"
+                    src="/icons/whatsapp.png"
+                    alt="Whatsapp"
                     className="w-6 h-6 mr-2"
                   />
-                  LinkedIn
+                  0702 154 274
                 </a>
                 <a
-                  href="Mbuthia_the_Architect"
+                  href="https://twitter.com/Arch_Mbuthia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-lg hover:text-gray-400"
@@ -352,20 +366,7 @@ const HomePage = () => {
                   Twitter
                 </a>
                 <a
-                  href="https://www.facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-lg hover:text-gray-400"
-                >
-                  <img
-                    src="/icons/facebook.png"
-                    alt="Facebook"
-                    className="w-6 h-6 mr-2"
-                  />
-                  Facebook
-                </a>
-                <a
-                  href="https://www.facebook.com"
+                  href="https://www.instagram.com/arch_mbuthia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-lg hover:text-gray-400"

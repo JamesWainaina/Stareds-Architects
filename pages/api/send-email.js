@@ -29,6 +29,7 @@ export default async function handler(req, res) {
         Description: ${description}`,
         html: `<h3>Client Inquiry Details:</h3>
                <p><strong>Name:</strong> ${name}</p>
+               <p><strong>Phone:</strong> ${phone}</p>
                <p><strong>Email:</strong> ${email}</p>
                <p><strong>Description:</strong> ${description}</p>`,
       });

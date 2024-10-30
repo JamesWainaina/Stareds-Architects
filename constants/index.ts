@@ -50,4 +50,28 @@ export const drafts = [
      description:
        "A luxurious mansionette designed to offer comfort, style, and elegance. Completed in 2018",
    },
+   {
+     title: "Three bedroom bungalow with hidden roof",
+     image: "/icons/Bungalow.jpeg",
+     description:
+       "A three-bedroom bungalow with a hidden roof design.Located in Ngong",
+   },
+   {
+      title: "Five bedroom Mansion",
+      image: "/icons/ThigioMansion.jpeg",
+      description:
+        "A five-bedroom mansion with a modern design and luxurious finishes. Located in Thigio",
+    },
+    {
+      title : " Two Bedroom container house",
+      image: "/icons/TwoBedroomContainer.jpeg",
+      description:
+        "A two-bedroom house made from a containner. Located in Ruiru",
+    },
+    {
+      title : "Three Bedroom bungalow house",
+      image: "/icons/01.jpg",
+      description:
+        "A three-bedroom house with a modern design and luxurious finishes.",
+    }
  ];
