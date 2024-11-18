@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/768f9563-951b-444d-b42a-859128d79bc7)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Stanreds is a construction company and here is an overview of the project displaying their projects and the services they offer.
 
 ## Getting Started
 
