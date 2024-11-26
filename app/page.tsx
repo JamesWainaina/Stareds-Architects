@@ -99,16 +99,14 @@ const HomePage = () => {
           ></div>
 
           {/* Right Section with Text */}
-          <div
-            className="lg:w-1/2 w-full h-1/2 lg:h-full flex flex-col items-start 
-            justify-center px-6 lg:px-12 text-white text-center lg:text-left"
-          >
+          <div className="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center lg:items-start justify-center px-6 lg:px-12 text-white text-center lg:text-left">
             <h1
               style={{ fontFamily: "Algerian, sans-serif", fontSize: "64px" }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             >
               STANREDS ARCHITECTS
             </h1>
-            <h2 className="text-2xl lg:text-3xl font-semibold mb-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6">
               Making every draft a reality.
             </h2>
             {/* Smooth scrolling to #about section */}
@@ -124,26 +122,26 @@ const HomePage = () => {
         {/* About Us Section */}
         <section
           id="about"
-          className="h-screen bg-white flex items-center justify-center px-8"
+          className="h-screen bg-white flex flex-col sm:flex-row items-center justify-center px-4 sm:px-8"
         >
-          <div className="max-w-4xl w-full">
+          <div className="w-full sm:max-w-4xl">
             {/* Heading on the left with a line on top */}
-            <div className="relative mb-6 w-1/2">
+            <div className="relative mb-6 w-full sm:w-1/2">
               <div className="absolute -top-4 left-0 w-16 h-1 bg-blue-600"></div>
-              <h2 className="text-5xl font-semibold">
-                STANREDS is built on our founders&apos; unique outlook on Architectural Design and 
-                construction
+              <h2 className="text-4xl sm:text-5xl font-semibold text-center sm:text-left">
+                STANREDS is built on our founders&apos; unique outlook on
+                Architectural Design and construction
               </h2>
             </div>
 
             {/* Paragraph on the right */}
-            <div className="flex justify-end">
-              <p className="text-md text-gray-600 leading-relaxed max-w-md">
-                STANREDS is a Architectural and  construction company that was founded by Edward
-                Mbuthia. Mbuthia has always had a unique outlook on
-                construction, and they have used this outlook to build a
-                successful company that is known for its innovative designs and
-                high-quality workmanship.
+            <div className="flex justify-center sm:justify-end">
+              <p className="text-sm sm:text-md text-gray-600 leading-relaxed max-w-md">
+                STANREDS is an Architectural and construction company that was
+                founded by Edward Mbuthia. Mbuthia has always had a unique
+                outlook on construction, and they have used this outlook to
+                build a successful company that is known for its innovative
+                designs and high-quality workmanship.
               </p>
             </div>
           </div>
@@ -153,9 +151,9 @@ const HomePage = () => {
         {/* Added padding-top to offset the fixed navbar */}
         <section
           id="services"
-          className="min-h-screen bg-blue-900 text-white px-8 py-16" // Changed to min-h-screen to grow dynamically
+          className="min-h-screen bg-blue-900 text-white px-4 sm:px-8 py-16" // Adjusted for padding on small screens
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-full sm:max-w-6xl mx-auto">
             <h2 className="text-4xl font-semibold mb-6 text-center">
               Our Services
             </h2>
@@ -183,10 +181,12 @@ const HomePage = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Service Item */}
               <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
                 <img
                   src="/icons/project1.png"
-                  alt="Residential Spaces"
+                  alt="Commercial Spaces"
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4 text-center">
@@ -234,6 +234,7 @@ const HomePage = () => {
                   <p>{drafts[0].description}</p>
                 </div>
               </div>
+
               {/* Service Item */}
               <div className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
                 <img
@@ -256,9 +257,9 @@ const HomePage = () => {
         {/* Other Sections */}
         <section
           id="projects"
-          className="h-auto bg-gray-400 text-gray-900 px-8 py-16"
+          className="h-auto bg-gray-400 text-gray-900 px-4 sm:px-8 py-16" // Adjusted for padding on small screens
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-full sm:max-w-6xl mx-auto">
             <h2 className="text-4xl font-semibold mb-6 text-center">
               Our Projects
             </h2>
@@ -279,9 +280,9 @@ const HomePage = () => {
           <h2 className="text-4xl font-semibold mb-6 text-center">
             Contact Us
           </h2>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+          <div className="max-w-full sm:max-w-6xl mx-auto flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
             {/* Left side: Contact form */}
-            <div className="w-full md:w-1/2 mt-3">
+            <div className="w-full sm:w-1/2 mt-3">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -330,7 +331,7 @@ const HomePage = () => {
             </div>
 
             {/* Right side: Social media links */}
-            <div className="w-full md:w-1/2 flex flex-col items-start justify-center space-y-2">
+            <div className="w-full sm:w-1/2 flex flex-col items-start justify-center space-y-2">
               <h2 className="text-xl font-semibold mb-2">Connect with us</h2>
               <div className="flex items-center text-lg hover:text-gray-400 mt-2">
                 <img
@@ -377,7 +378,7 @@ const HomePage = () => {
                 >
                   <img
                     src="/icons/instagram.png"
-                    alt="Facebook"
+                    alt="Instagram"
                     className="w-6 h-6 mr-2"
                   />
                   Instagram

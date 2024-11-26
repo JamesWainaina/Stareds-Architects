@@ -22,6 +22,9 @@ const config: Config = {
         "home-background": "url('/icons/steven-harris-beach-house.jpg')",
         // Add more background images as needed
       },
+      spacing: {
+        "128": "32rem",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
