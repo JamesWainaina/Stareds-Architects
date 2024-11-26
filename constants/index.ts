@@ -1,3 +1,4 @@
+
 export const images = [
   "icons/3d2.png",
   "icons/3d3.png",
@@ -5,6 +6,7 @@ export const images = [
   "icons/3d5.png",
   "icons/3d6.png",
   "icons/3d7.png",
+  "icons/Tobeconstructed.jpeg"
 ];
 
 export const drafts = [
@@ -72,5 +74,11 @@ export const drafts = [
       image: "/icons/01.jpg",
       description:
         "A three-bedroom house with a modern design and luxurious finishes.",
+    },
+    {
+      title: "Mansion to be contructed in Ruiru",
+      image: "/icons/tobeConstructed.jpeg",
+      description:
+        "A luxurious mansion to be constructed in Ruiru. The project is set to be completed in due future",
     }
  ];
