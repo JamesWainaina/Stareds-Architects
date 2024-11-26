@@ -100,12 +100,10 @@ const HomePage = () => {
 
           {/* Right Section with Text */}
           <div className="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center lg:items-start justify-center px-4 lg:px-12 text-white text-center lg:text-left">
-            <h1
-              style={{ fontFamily: "Algerian, sans-serif", fontSize: "64px" }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
-            >
+            <h1 className="font-[Algerian], sans-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-4 sm:mt-6 md:mt-8">
               STANREDS ARCHITECTS
             </h1>
+
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6">
               Making every draft a reality.
             </h2>
