@@ -88,7 +88,7 @@ const HomePage = () => {
         {/* Home Section */}
         <section
           id="home"
-          className="h-screen flex flex-col lg:flex-row items-center bg-blue-900"
+          className="h-screen flex flex-col lg:flex-row items-center bg-blue-900 overflow-x-hidden"
         >
           {/* Left Section with Image */}
           <div
@@ -99,7 +99,7 @@ const HomePage = () => {
           ></div>
 
           {/* Right Section with Text */}
-          <div className="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center lg:items-start justify-center px-6 lg:px-12 text-white text-center lg:text-left">
+          <div className="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center lg:items-start justify-center px-4 lg:px-12 text-white text-center lg:text-left">
             <h1
               style={{ fontFamily: "Algerian, sans-serif", fontSize: "64px" }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
