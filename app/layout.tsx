@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "STANREDS",
   description: "The best architecture and design inspiration",
   icons: {
-    icon: "/icons/Stanreds.png",
+    icon: "/icons/STarends.png",
   },
 };
 
