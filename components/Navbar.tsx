@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="text-lg font-bold">
           <Link href="#home" scroll={false}>
             <Image
-              src="/icons/StarendsFinal.png"
+              src="/icons/logoEdu.jpeg"
               width={50}
               height={50}
               alt="Stanreds"
